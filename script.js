@@ -35,10 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Password is correct, now check status
                 switch (user.status) {
                     case 'Approved':
-                        message.textContent = '✅ Login successful!';
+                        message.textContent = '✅ Login successful! Redirecting...';
                         message.className = 'success';
-                        // In a real application, you would redirect to a user dashboard
-                        // For now, we will just show a message.
+                        sessionStorage.setItem('user', JSON.stringify(user)); // Store user session
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 1000);
                         break;
                     case 'Pending':
                         message.textContent = '⚠️ Your account is pending admin approval. Please wait for admin to activate your account.';
