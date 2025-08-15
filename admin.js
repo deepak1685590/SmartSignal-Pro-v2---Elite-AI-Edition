@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Admin access check
+    if (sessionStorage.getItem('isAdmin') !== 'true') {
+        window.location.href = 'index.html';
+        return; // Stop executing the rest of the script
+    }
+
     const userListContainer = document.getElementById('user-list');
 
     function renderUsers() {
@@ -90,4 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderUsers();
+
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('isAdmin');
+        window.location.href = 'index.html';
+    });
 });

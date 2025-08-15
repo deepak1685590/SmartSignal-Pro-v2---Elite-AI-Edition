@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (username === 'DG143' && password === 'DG143') {
             message.textContent = '✅ Admin login successful! Redirecting...';
             message.className = 'success';
-            // Redirect to admin page (to be created)
+            sessionStorage.setItem('isAdmin', 'true'); // Set admin flag
+            // Redirect to admin page
             setTimeout(() => {
                 window.location.href = 'admin.html';
             }, 1000);

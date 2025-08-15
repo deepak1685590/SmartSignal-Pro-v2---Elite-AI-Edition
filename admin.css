@@ -12,9 +12,29 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0;
+}
+
+#logout-btn {
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    background-color: #d32f2f;
 }
 
 #user-list {
